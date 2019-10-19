@@ -9,9 +9,13 @@ import { HomePage } from '../HomePage';
 import { LoginPage } from '../LoginPage';
 import { RegisterPage } from '../RegisterPage';
 import { MapPage } from '../MapPage';
+import '../css/main.css';
+
 
 class App extends React.Component {
     constructor(props) {
+
+
         super(props);
 
         history.listen((location, action) => {
@@ -23,9 +27,19 @@ class App extends React.Component {
     render() {
         const { alert } = this.props;
         return (
-            <div className="jumbotron">
-                <div className="container">
-                    <div className="col-sm-8 col-sm-offset-2">
+            <div>
+            <div className="header">
+            <a href="#">LOGO</a>
+  <div className="header-right">
+              <a className='active' href="#">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+
+    
+
+  </div>
+</div>
+            <div>
                         {alert.message &&
                             <div className={`alert ${alert.type}`}>{alert.message}</div>
                         }
@@ -38,9 +52,8 @@ class App extends React.Component {
                                 <Redirect from="*" to="/" />
                             </Switch>
                         </Router>
-                    </div>
-                </div>
-            </div>
+</div>
+</div>
         );
     }
 }

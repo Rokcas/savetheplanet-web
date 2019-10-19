@@ -17,6 +17,12 @@ class HomePage extends React.Component {
     render() {
         const { user, users } = this.props;
         return (
+            <div className="jumbotron">
+                <div className="container">
+                    <div className="col-sm-8 col-sm-offset-2">
+
+         
+ 
             <div className="col-md-6 col-md-offset-3">
                 <h1>Hi {user.firstName}!</h1>
                 <p>You're logged in with React!!</p>
@@ -43,6 +49,9 @@ class HomePage extends React.Component {
                 <p>
                     <Link to="/map">Mapas</Link>
                 </p>
+            </div>
+            </div>
+                </div>
             </div>
         );
     }
