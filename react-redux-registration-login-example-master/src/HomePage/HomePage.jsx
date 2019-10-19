@@ -1,4 +1,5 @@
 import React from 'react';
+import MapChart from '../_components/map'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -38,6 +39,9 @@ class HomePage extends React.Component {
                 }
                 <p>
                     <Link to="/login">Logout</Link>
+                </p>
+                <p>
+                    <Link to="/map">Mapas</Link>
                 </p>
             </div>
         );
