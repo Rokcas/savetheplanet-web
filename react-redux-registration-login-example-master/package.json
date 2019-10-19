@@ -11,6 +11,7 @@
     "start": "webpack-dev-server --open"
   },
   "dependencies": {
+    "css-loader": "^3.2.0",
     "google-maps-react": "^2.0.2",
     "history": "^4.6.3",
     "react": "^16.0.0",
@@ -19,7 +20,8 @@
     "react-router-dom": "^4.1.2",
     "redux": "^3.7.2",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "style-loader": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
