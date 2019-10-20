@@ -15,11 +15,25 @@ const getAreaInfo = () => {
   return JSON.parse(getData()).features;
 };
 
-const geoJsonToCoords = geoJson =>
-  geoJson.geometry.coordinates[0].map(coords => ({
-    lat: coords[0],
-    lng: coords[1]
-  }));
+const createCirkel = (center, r) => {
+  let radPart = Math.PI / 32;
+  let res = [];
+  console.log(center, r);
+
+  for (let i = 0; i < 64; ++i){
+    res.push({
+      lat: center.lat + r * Math.sin(radPart * i),
+      lng: center.lng + r * Math.cos(radPart * i),
+    });
+  }
+  return res;
+}
+
+const colors = [
+  "#FFFF00",
+  "#FFa500",
+  "#FF0000",
+]
 
 class MapChart extends React.Component {
   constructor(props) {
@@ -44,17 +58,18 @@ class MapChart extends React.Component {
             west: -120
           }}
         >
-          {this.state.areas.map((obj, index) => (
-            <Polygon // Škiela duos tik poligonus
-              paths={geoJsonToCoords(obj)}
-              strokeColor="#FF0000"
+          {this.state.areas.map((obj, index) => {
+            console.log(colors[obj.properties.severity - 1]);
+            return <Polygon // Škiela duos tik poligonus
+              paths={createCirkel({lat: obj.geometry.coordinates[0], lng: obj.geometry.coordinates[1]}, obj.properties.radius)}
+              strokeColor={colors[obj.properties.severity - 1]}
               strokeOpacity={0.8}
               strokeWeight={2}
-              fillColor="#FF0000"
+              fillColor={colors[obj.properties.severity - 1]}
               fillOpacity={0.35}
               key={index}
             />
-          ))}
+          })}
         </Map>
       </div>
     );
