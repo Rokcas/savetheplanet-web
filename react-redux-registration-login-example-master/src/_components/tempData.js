@@ -177,28 +177,6 @@ const data = `{
             ]
           ]
         }
-      },
-      {
-        "type": "Feature",
-        "properties": {},
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            56.25,
-            50.064191736659104
-          ]
-        }
-      },
-      {
-        "type": "Feature",
-        "properties": {},
-        "geometry": {
-          "type": "Point",
-          "coordinates": [
-            48.309587,
-            6.580070
-          ]
-        }
       }
     ]
   }`;
