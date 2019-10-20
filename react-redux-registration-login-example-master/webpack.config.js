@@ -1,6 +1,7 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
+    entry: ["babel-polyfill", "./src/index.jsx"],
     mode: 'development',
     resolve: {
         extensions: ['.js', '.jsx']

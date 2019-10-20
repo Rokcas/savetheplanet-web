@@ -37,9 +37,15 @@ class MapChart extends React.Component {
           zoom={4}
           style={mapStyles}
           initialCenter={{ lat: 47.444, lng: -122.176 }}
+          bounds={{
+            east: 120,
+            north: 90,
+            south: -90,
+            west: -120
+          }}
         >
           {this.state.areas.map((obj, index) => (
-            <Polygon                                      // Škiela duos tik poligonus
+            <Polygon // Škiela duos tik poligonus
               paths={geoJsonToCoords(obj)}
               strokeColor="#FF0000"
               strokeOpacity={0.8}
